@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://kit.fontawesome.com/5cfb060ebe.js" crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<meta name="description" content="Actividades Sustentables">
+	<title>Inicio - Terrazas & Paredes</title>
+	<meta name="Keywords" content="Actividades Sustentables">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/logo.jpg">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/678c8ce4f8.js" crossorigin="anonymous"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/funciones.js"></script>
+</head>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<a href=""><img src="img/logo.jpg" class="logo"></a>
+			<nav>
+				<a href="index1.html#inicio">Inicio</a>
+				<a href="index1.html#nosotros">Nosotros</a>
+				<a href="index1.html#servicios">Servicios</a>
+				<a href="Galeria.html#galeria">Galeria</a>
+				<a href="index1.html#contactenos">Contactenos</a>
+			</nav>
+			<a href="" class="hamb"><i class="fas fa-bars"></i></a>
+		</div>
+	</header>
+	<main>
+		<section id="nosotros" class="seccion">
+			<div class="container">
+				<p>Comunícate con nosotros:</p>
+			</div>
+		</section>
+		<section id="contactenos" class="seccion">
+			<iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Cuenca+(Practica)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="columna columna-41 columna-mobile-100 empujar-58 empujar-movile-0 sinpadding-movile">
+						<form action="index.php" method="post">
+							<div class="form-block">
+								<input type="text" name="nombre" class="form-control" placeholder="Nombre">
+							</div>
+							<div class="form-block">
+								<input type="mail" name="mail" class="form-control" placeholder="Mail">
+							</div>
+							<div class="form-block">
+								<textarea name="mensaje" placeholder="Mensaje"></textarea>
+							</div>
+							<div class="form-block bloque-ultimo">
+								<input type="submit" value="Enviar" class="boton boton-negro">
+							</div>
+							<?php
+								if($_SERVER["REQUEST_METHOO"]=="POST")
+								{
+									$nombre =$_POST["nombre"];
+									$mail =$_POST["mail"];
+									$mensaje =$_POST["mensaje"];
+									if(isset($nombre))
+									{
+										if(isset($mail))
+										{
+											if(isset($mensaje))
+											{
+												$para="homero64.vuele@gmail.com";
+												$asunto="Esto es una prueba";
+												$cuerpo=$nombre."\n".$mail."\n".$mensaje;
+												$adicional="from: fernanda11052@gmail.com";
+												mail($para,$asunto,$cuerpo,$adicional);
+												?>
+											<?php
+											}
+										}
+									}
+								}
+							?>
+						</form>	
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="columna columna-25">
+					<img src="img/logo.jpg" class="logo-footer">
+				</div>
+				<div class="columna columna-25">
+					<h3>
+						Temas relacionados 
+					</h3>
+					<ul>
+						<li><a href="#">Arquitectura Sustentable</a></li>
+						<li><a href="#">El Arte de la Jardineria</a></li>
+						<li><a href="#">Botanica</a></li>
+					</ul>
+					</div>
+
+				<div class="columna columna-25 columna-mobile-100">
+					<h3>Datos de contacto</h3>
+					<ul>
+						<li>fernanda11052@gmail.com</li>
+						<li>0999898541</li>
+						<li>Don Bosco<br>
+						<li>Cuenca-Ecuador</li>
+					</ul>
+				</div>
+				<div class="columna columna-25">
+					<h3>Redes sociales</h3>
+					<ul class="redes-sociales">
+						<a href="#"></a>
+							<i class="fab fa-facebook"></i>
+
+						<a href="#"></a>
+							<i class="fab fa-whatsapp"></i>
+						<a href="#"></a>
+						<i class="fab fa-twitch"></i>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="barra-footer">
+			&copy; Derechos Reservados - 2021
+		</div>
+	</footer>
+</body>
+</html>
